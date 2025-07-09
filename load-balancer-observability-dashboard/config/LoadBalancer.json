@@ -1,0 +1,62 @@
+{
+  "name": "LoadBalancerTheme",
+  "dataColors": [
+    "#FF6361", "#BC5090", "#58508D", "#003f5c", "#FFA600", "#36a2eb"
+  ],
+  "background": "#ffffff",
+  "foreground": "#303030",
+  "tableAccent": "#FF6361",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "fontFamily": "Segoe UI",
+        "fontSize": 12,
+    "card": {
+  "*": {
+    "color": "#003f5c",
+    "fontSize": 16,
+    "fontWeight": "bold",
+    "labelColor": "#58508D",
+    "labelFontSize": 12
+  }
+},
+"multiRowCard": {
+  "*": {
+    "color": "#303030",
+    "fontSize": 13,
+    "labelColor": "#BC5090",
+    "labelFontSize": 11
+  }
+}
+
+      }
+    },
+    "card": {
+      "*": {
+        "color": "#003f5c",
+        "fontSize": 14,
+        "fontWeight": "bold"
+      }
+    },
+    "scatterChart": {
+      "*": {
+        "dataLabels": [
+        {
+          "show": true,
+          "color": "#303030",
+          "fontSize": 10
+        }],
+        "categoryLabels": [{
+          "show": true
+        }
+    ]
+      }
+    },
+    "multiRowCard": {
+      "*": {
+        "fontSize": 11,
+        "color": "#333333"
+      }
+    }
+  }
+}

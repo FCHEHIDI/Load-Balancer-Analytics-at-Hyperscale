@@ -1,0 +1,20 @@
+{
+  "database": {
+    "server": "F2D2\\SQLEXPRESS",
+    "database": "TrafficInsights",
+    "authentication": "Windows Authentication",
+    "user": "F2D2\\info",
+    "connection_string": "DRIVER={ODBC Driver 17 for SQL Server};SERVER=F2D2\\SQLEXPRESS;DATABASE=TrafficInsights;Trusted_Connection=yes;",
+    "timeout": 30
+  },
+  "pipeline": {
+    "default_requests": 15000,
+    "default_duration_hours": 24,
+    "data_retention_days": 90
+  },
+  "paths": {
+    "data_directory": "../data/",
+    "reports_directory": "../reports/",
+    "logs_directory": "../logs/"
+  }
+}
