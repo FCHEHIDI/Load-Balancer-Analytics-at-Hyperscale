@@ -5,11 +5,7 @@
 This workspace contains two complementary projects that together provide a comprehensive solution for load balancer monitoring, analytics, and intelligent optimization:
 
 ### 1. Load Balancer Observability Dashboard
-**Purpose*2. **Database Configuration**
-   ```bash
-   # Execute SQL schema setup for TrafficInsights database
-   sqlcmd -S YOUR_SERVER -i config/database_schema.sql
-   ```al-time monitoring and analytics platform for load balancer infrastructure
+**Purpose**: Real-time monitoring and analytics platform for load balancer infrastructure
 
 **Key Features**:
 - Real-time telemetry processing and visualization
@@ -70,7 +66,7 @@ flowchart LR
     end
     
     %% Analytics Platforms (Side by Side)
-    subgraph ANALYTICS["� Analytics Platforms"]
+    subgraph ANALYTICS["🔬 Analytics Platforms"]
         direction TB
         
         subgraph OBS["🔍 Observability"]
@@ -98,7 +94,7 @@ flowchart LR
     end
     
     %% End Users
-    subgraph USERS["� Stakeholders"]
+    subgraph USERS["👥 Stakeholders"]
         OPS["`**Operations**
         Monitoring teams`"]
         MGMT["`**Management**
