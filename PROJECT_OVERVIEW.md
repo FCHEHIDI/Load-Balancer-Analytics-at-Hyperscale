@@ -196,7 +196,7 @@ This project demonstrates a complete SQL Server integration with enterprise-grad
 # Example configuration - DO NOT USE IN PRODUCTION
 connection_string = (
     "DRIVER={ODBC Driver 17 for SQL Server};"
-    "SERVER=F2D2\\SQLEXPRESS;"        # Private development server
+    "SERVER=#####\\SQLEXPRESS;"        # Private development server
     "DATABASE=TrafficInsights;"        # Updated to TrafficInsights golden layer
     "Trusted_Connection=yes;"          # Windows integrated security
     "Encrypt=yes;"
@@ -324,7 +324,7 @@ connection_string = "sqlite:///load_balancer_analytics.db"
 2. **Database Configuration**
    ```bash
    # Execute SQL schema setup
-   sqlcmd -S F2D2\SQLEXPRESS -i config/database_schema.sql (private account)
+   sqlcmd -S #####\SQLEXPRESS -i config/database_schema.sql (private account)
    ```
 
 3. **Generate Sample Data**
@@ -474,11 +474,6 @@ connection_string = "sqlite:///load_balancer_analytics.db"
 **Fares Chehidi**  
 **Email**: fareschehidi28@gmail.com  
 
-### Getting Help
-- **Technical Issues**: Create issue in project repository
-- **Feature Requests**: Submit via email with detailed requirements
-- **Consulting Services**: Available for enterprise implementations
-- **Training**: Custom training programs available
 
 ### Community Resources
 - **Documentation**: Comprehensive guides in `/docs` directories
