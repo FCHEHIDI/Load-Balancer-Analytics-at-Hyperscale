@@ -1,5 +1,8 @@
 # Load Balancer Analytics at Hyperscale
 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://fr.linkedin.com/in/fares-chehidi-89a31333a)
+[![Email](https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:fareschehidi28@gmail.com)
+
 **Enterprise-grade load balancer observability platform with ML-powered retry prediction, real-time analytics, SQL Server integration, and Power BI dashboards for high-scale traffic management.**
 
 ## 📋 Quick Overview
@@ -126,7 +129,7 @@ This project is designed for enterprise load balancer environments. For contribu
 
 - **Author**: Fares Chehidi
 - **Email**: fareschehidi28@gmail.com
-- **LinkedIn**: [Connect with me](https://linkedin.com/in/fareschehidi)
+- **LinkedIn**: [Connect with me](https://fr.linkedin.com/in/fares-chehidi-89a31333a)
 
 ## 📄 License
 
