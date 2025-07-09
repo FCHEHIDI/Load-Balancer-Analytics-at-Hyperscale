@@ -66,7 +66,7 @@ flowchart LR
     end
     
     %% Analytics Platforms (Side by Side)
-    subgraph ANALYTICS["🔬 Analytics Platforms"]
+    subgraph ANALYTICS["� Analytics Platforms"]
         direction TB
         
         subgraph OBS["🔍 Observability"]
