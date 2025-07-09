@@ -82,6 +82,7 @@ python test_integration.py
 - **[Observability Dashboard Guide](load-balancer-observability-dashboard/README.md)** - Setup and usage instructions
 - **[Retry Prediction Guide](load-balancer-retry-prediction/README.md)** - ML model documentation
 - **[Database Setup Guide](load-balancer-observability-dashboard/DATABASE_SETUP.md)** - Database configuration instructions
+- **[Power BI Dashboard (PDF)](load-balancer-observability-dashboard/dashboards/Load%20Balancer%20Dashboard.pdf)** - Dashboard preview (no Power BI required)
 
 ## 🏗️ Architecture
 
