@@ -72,81 +72,45 @@ flowchart LR
     %% External Data Sources (Optional)
     subgraph EXTERNAL["🌐 External Sources (Optional)"]
         direction TB
-        LB["Load Balancers
-        Live telemetry"]
-        INFRA["Infrastructure
-        Server metrics"]
+        LB["Load Balancers - Live telemetry"]
+        INFRA["Infrastructure - Server metrics"]
     end
     
     %% Data Generation
     subgraph GENERATION["🔄 Data Generation"]
-        DG["Data Generator
-        (data_generation.py)
-        
-        • Synthetic data creation
-        • Data augmentation
-        • CSV file generation"]
+        DG["Data Generator - data_generation.py"]
     end
     
     %% Intermediate Files
     subgraph FILES["📁 Intermediate Files"]
         direction TB
-        CSV["CSV Files
-        request_logs.csv
-        server_metrics.csv"]
-        JSON["JSON Files
-        analytics_report.json"]
+        CSV["CSV Files - request_logs.csv, server_metrics.csv"]
+        JSON["JSON Files - analytics_report.json"]
     end
     
     %% Analytics Processing
     subgraph ANALYTICS["⚙️ Analytics Processing"]
-        AE["Analytics Engine
-        (dashboard_engine.py)
-        
-        • KPI computation
-        • Anomaly detection
-        • Report generation"]
+        AE["Analytics Engine - dashboard_engine.py"]
     end
     
     %% Central Hub - SQL Injector
     subgraph CENTRAL["🎯 SQL Injector - CENTRAL HUB"]
-        SI["SQL Injector
-        (sql_injector.py)
-        
-        KEY COMPONENT
-        • Ingests CSV/JSON files
-        • Schema management
-        • Batch data insertion
-        • Data warehousing"]
+        SI["SQL Injector - sql_injector.py - KEY COMPONENT"]
     end
     
     %% SQL Server Database
     subgraph DATABASE["🗄️ SQL Server"]
-        DB["TrafficInsights DB
-        
-        • RequestLogs table
-        • ServerMetrics table
-        • AnalyticsReports table"]
+        DB["TrafficInsights Database"]
     end
     
     %% Power BI - Main Deliverable
     subgraph POWERBI["📊 Power BI - MAIN DELIVERABLE"]
-        PBI["Dashboard System
-        
-        PRIMARY OUTPUT
-        • Real-time monitoring
-        • Executive reports
-        • Operational dashboards"]
+        PBI["Dashboard System - PRIMARY OUTPUT"]
     end
     
     %% Orchestration
     subgraph ORCHESTRATION["🎼 Pipeline Orchestration"]
-        OO["Orchestrator
-        (observability_orchestrator.py)
-        
-        • Workflow coordination
-        • Error handling
-        • Health monitoring"]
+        OO["Orchestrator - observability_orchestrator.py"]
     end
     
     %% LINEAR DATA FLOW
