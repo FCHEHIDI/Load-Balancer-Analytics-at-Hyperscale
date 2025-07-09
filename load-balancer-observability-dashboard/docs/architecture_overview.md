@@ -65,25 +65,152 @@ This document provides a comprehensive overview of the technical architecture fo
 
 ## Data Flow Architecture
 
+The following Mermaid diagram illustrates the complete data flow from generation through processing to final delivery via Power BI dashboards:
+
+```mermaid
+flowchart LR
+    %% External Data Sources (Optional)
+    subgraph EXTERNAL["🌐 External Sources (Optional)"]
+        direction TB
+        LB["Load Balancers
+        Live telemetry"]
+        INFRA["Infrastructure
+        Server metrics"]
+    end
+    
+    %% Data Generation
+    subgraph GENERATION["🔄 Data Generation"]
+        DG["Data Generator
+        (data_generation.py)
+        
+        • Synthetic data creation
+        • Data augmentation
+        • CSV file generation"]
+    end
+    
+    %% Intermediate Files
+    subgraph FILES["📁 Intermediate Files"]
+        direction TB
+        CSV["CSV Files
+        request_logs.csv
+        server_metrics.csv"]
+        JSON["JSON Files
+        analytics_report.json"]
+    end
+    
+    %% Analytics Processing
+    subgraph ANALYTICS["⚙️ Analytics Processing"]
+        AE["Analytics Engine
+        (dashboard_engine.py)
+        
+        • KPI computation
+        • Anomaly detection
+        • Report generation"]
+    end
+    
+    %% Central Hub - SQL Injector
+    subgraph CENTRAL["🎯 SQL Injector - CENTRAL HUB"]
+        SI["SQL Injector
+        (sql_injector.py)
+        
+        KEY COMPONENT
+        • Ingests CSV/JSON files
+        • Schema management
+        • Batch data insertion
+        • Data warehousing"]
+    end
+    
+    %% SQL Server Database
+    subgraph DATABASE["🗄️ SQL Server"]
+        DB["TrafficInsights DB
+        
+        • RequestLogs table
+        • ServerMetrics table
+        • AnalyticsReports table"]
+    end
+    
+    %% Power BI - Main Deliverable
+    subgraph POWERBI["📊 Power BI - MAIN DELIVERABLE"]
+        PBI["Dashboard System
+        
+        PRIMARY OUTPUT
+        • Real-time monitoring
+        • Executive reports
+        • Operational dashboards"]
+    end
+    
+    %% Orchestration
+    subgraph ORCHESTRATION["🎼 Pipeline Orchestration"]
+        OO["Orchestrator
+        (observability_orchestrator.py)
+        
+        • Workflow coordination
+        • Error handling
+        • Health monitoring"]
+    end
+    
+    %% LINEAR DATA FLOW
+    EXTERNAL -.->|Optional| DG
+    DG --> CSV
+    DG --> JSON
+    CSV --> AE
+    JSON --> AE
+    AE --> SI
+    SI --> DB
+    DB --> PBI
+    
+    %% Orchestration oversight
+    OO -.-> DG
+    OO -.-> AE
+    OO -.-> SI
 ```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│  Data Generator │───▶│ Analytics Engine│───▶│  SQL Warehouse  │
-│                 │    │                 │    │                 │
-│ - Request Logs  │    │ - KPI Compute   │    │ - RequestLogs   │
-│ - Server Metrics│    │ - Anomaly Det.  │    │ - ServerMetrics │
-│ - Synthetic Data│    │ - Pattern Anal. │    │ - Reports       │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-         │                        │                        │
-         │                        │                        │
-         ▼                        ▼                        ▼
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   CSV Files     │    │  JSON Reports   │    │  Power BI Data  │
-│                 │    │                 │    │                 │
-│ - request_logs  │    │ - analytics_    │    │ - Live Dashboard│
-│ - server_metrics│    │   report.json   │    │ - Real-time KPIs│
-│ - test_metrics  │    │                 │    │ - Visual Charts │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-```
+
+### Key Architecture Highlights
+
+1. **Data Generation**:
+   - **Data Generator** creates synthetic telemetry data
+   - Optionally ingests data from external load balancers and infrastructure
+   - Outputs structured **CSV files** (request_logs.csv, server_metrics.csv)
+
+2. **Analytics Processing**:
+   - **Analytics Engine** reads CSV files
+   - Computes KPIs, detects anomalies, generates insights
+   - Produces **JSON reports** (analytics_report.json)
+
+3. **Central Data Warehousing** (Key Component):
+   - **SQL Injector** serves as the central hub
+   - Ingests both CSV files and JSON analytics reports
+   - Manages database schema and performs batch insertions
+   - Stores everything in **SQL Server TrafficInsights database**
+
+4. **Primary Deliverable**:
+   - **Power BI Dashboard** connects directly to SQL Server
+   - Provides real-time monitoring and executive reporting
+   - Serves as the main system deliverable and monitoring tool
+
+#### 🎯 **SQL Injector Central Role:**
+- **Data Gateway**: All processed data flows through this component
+- **Schema Manager**: Handles database structure and optimization
+- **Data Validator**: Ensures data quality and integrity
+- **Performance Optimizer**: Manages batch processing and indexing
+- **Transaction Controller**: Maintains data consistency and safety
+
+#### 📊 **Power BI Dashboard as Primary Deliverable:**
+The Power BI Dashboard represents the **main system deliverable** and serves as:
+- **Executive Monitoring Tool**: Real-time KPIs for management oversight
+- **Operational Command Center**: Live monitoring for operations teams
+- **Performance Analytics**: Trend analysis and capacity planning
+- **Alert Dashboard**: Visual notifications for system anomalies
+- **Business Intelligence**: Data-driven decision support
+
+### Architecture Flow Summary
+
+#### 🎼 **Orchestration Layer**
+The Observability Orchestrator manages the entire pipeline, ensuring:
+- Seamless workflow coordination between components
+- Error handling and recovery procedures
+- System health monitoring and validation
+- Performance optimization across the pipeline
 
 ## Technical Stack
 
@@ -221,7 +348,7 @@ This document provides a comprehensive overview of the technical architecture fo
 ## Contact Information
 
 **Author**: Fares Chehidi  
-**Email**: fareschehidi@gmail.com  
+**Email**: fareschehidi28@gmail.com  
 **Documentation**: [Architecture Guide](architecture_overview.md)  
 **Support**: [Support Portal](mailto:fareschehidi@gmail.com)
 
